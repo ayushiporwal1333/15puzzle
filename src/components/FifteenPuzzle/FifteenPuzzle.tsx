@@ -64,9 +64,9 @@ const FifteenPuzzle = () => {
       if (event.key === "Escape") {
         if (isGameActive && !isGamePaused) {
           setIsGamePaused(true);
-          clearTimer(); // Pause the timer
+          clearTimer();
         } else {
-          handleStartPause(); // Resume the game
+          handleStartPause();
         }
       }
     };
@@ -76,7 +76,7 @@ const FifteenPuzzle = () => {
     return () => {
       window.removeEventListener("keydown", handleEscapeKeyPress);
     };
-  }, [isGameActive, isGamePaused]); // Add dependencies
+  }, [isGameActive, isGamePaused]);
 
   useEffect(() => {
     if (solvable && isGameActive && !isGamePaused) {
@@ -90,7 +90,6 @@ const FifteenPuzzle = () => {
     const handleArrowKeyPress = (event: KeyboardEvent) => {
       if (!isGameActive || isGamePaused) return;
 
-      // Prevent default behavior of arrow keys
       if (
         ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)
       ) {
@@ -138,7 +137,7 @@ const FifteenPuzzle = () => {
       clearInterval(timerId);
     }
 
-    const startTime: number = new Date().getTime() - elapsedTime * 1000; // Adjust start time with elapsed time
+    const startTime: number = new Date().getTime() - elapsedTime * 1000;
     const id: NodeJS.Timeout = setInterval(() => {
       const currentTime = new Date().getTime();
       const newElapsedTime = Math.floor((currentTime - startTime) / 1000);
@@ -262,7 +261,7 @@ const FifteenPuzzle = () => {
   const handleStartPause = () => {
     if (isGameActive && !isGamePaused) {
       setIsGamePaused(true);
-      clearTimer(); // Pause the timer
+      clearTimer();
     } else {
       if (!isGameActive) {
         const tilesToUse: number[] = initialTiles.length
@@ -276,7 +275,7 @@ const FifteenPuzzle = () => {
       }
       setIsGameActive(true);
       setIsGamePaused(false);
-      startTimer(); // Resume the timer
+      startTimer();
     }
   };
 
