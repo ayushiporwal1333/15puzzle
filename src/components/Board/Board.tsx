@@ -28,7 +28,10 @@ const Board: React.FC<BoardProps> = ({
     >
       {(!isGameActive || isGamePaused) && (
         <div className="grid-overlay">
-          <a className={!solvable ? "not-solvable" : ""} onClick={onStartPause}>
+          <a
+            className={!solvable ? "not-solvable" : ""}
+            onClick={solvable ? onStartPause : undefined}
+          >
             {isGamePaused ? "paused" : !solvable ? "not solvable" : "play"}
           </a>
         </div>
