@@ -1,0 +1,60 @@
+.header_row {
+  display: flex;
+
+  @media screen and (max-width: 767px) {
+    .info_box {
+      order: 2;
+    }
+  }
+}
+
+.score_point,
+.timepoint {
+  width: 110px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: rgba(158, 170, 255, 0.37);
+  margin: 10px auto;
+}
+
+.text {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.num {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.start_button,
+.reset_button,
+.shuffle_button,
+.help_button {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 10px auto;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.start_button,
+.reset_button {
+  background-color: rgba(18, 73, 7, 0.17);
+}
+
+.shuffle_button,
+.help_button {
+  background-color: rgb(123 40 129 / 17%);
+}
