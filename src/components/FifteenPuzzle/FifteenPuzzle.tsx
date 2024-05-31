@@ -41,7 +41,7 @@ const generateTiles = (solvable: boolean): number[] => {
   );
   do {
     shuffleArray(tiles);
-  } while (!isSolvable(tiles));
+  } while (isSolvable(tiles) == solvable);
   return tiles;
 };
 
