@@ -9,7 +9,12 @@ const Footer = () => {
         <p>15teen Puzzle Game</p>
       </div>
       <div className={styles.copyright_text}>
-        Developed by <strong>Ayushi Porwal</strong>
+        Developed by{" "}
+        <strong>
+          <a href="https://github.com/ayushiporwal1333/15puzzle">
+            Ayushi Porwal
+          </a>
+        </strong>
       </div>
     </footer>
   );
