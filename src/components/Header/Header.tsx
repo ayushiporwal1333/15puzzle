@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
                   className={`start-button ${styles.start_button} ${
                     !solvable ? "disabled" : "active"
                   }`}
-                  onClick={onStartPause}
+                  onClick={solvable ? onStartPause : undefined}
                 >
                   {isGameActive && !isGamePaused ? "PAUSE" : "START"}
                 </div>
